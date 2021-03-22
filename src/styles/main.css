@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+input {
+  @apply px-3 py-2 rounded-md;
+}
+
+/* ANIMATIONS */
+@keyframes slide-shake {
+  0% {
+    @apply opacity-0 -top-14;
+  }
+  50% {
+    @apply opacity-100 top-14;
+  }
+  60% {
+    @apply left-2 -right-2;
+  }
+  70% {
+    @apply -left-2 right-2;
+  }
+  80% {
+    @apply left-2 -right-2;
+  }
+  90% {
+    @apply -left-2 right-2;
+  }
+  100% {
+    @apply left-0 right-0;
+  }
+}
