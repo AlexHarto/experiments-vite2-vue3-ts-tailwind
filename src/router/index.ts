@@ -4,6 +4,7 @@ import { routeNames } from '@/constants/routes'
 import AnimationTemplate from '@/views/todos/Template.vue'
 import AnimationHome from '@/views/todos/Home.vue'
 import AnimationAbout from '@/views/todos/About.vue'
+import AnimationContact from '@/views/todos/Contact.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -26,6 +27,11 @@ const routes: Array<RouteRecordRaw> = [
         path: '/animation/about',
         name: routeNames.TODOS.ABOUT,
         component: AnimationAbout,
+      },
+      {
+        path: '/animation/contact',
+        name: routeNames.TODOS.CONTACT,
+        component: AnimationContact,
       },
     ]
   },

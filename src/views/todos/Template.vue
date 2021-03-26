@@ -10,7 +10,7 @@
         <span class="mx-4">|</span>
       </li>
       <li class="flex items-center justify-center">
-        <router-link :to="{ name: routeNames.TODOS.ABOUT }" class="text-lg">Contact</router-link>
+        <router-link :to="{ name: routeNames.TODOS.CONTACT }" class="text-lg">Contact</router-link>
       </li>
     </ul>
     <div class="absolute p-1 cursor-pointer top-2 right-3" @click="toggleMode">
