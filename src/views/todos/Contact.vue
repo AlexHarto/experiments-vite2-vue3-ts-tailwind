@@ -91,7 +91,8 @@ export default defineComponent({
   @apply grid grid-cols-2 gap-8 mx-auto text-lg max-w-min min-w-max;
 }
 .item {
-  @apply flex flex-col items-center justify-center w-48 h-32 gap-2 bg-white rounded-lg shadow-lg;
+  @apply flex flex-col items-center justify-center w-48 h-32 gap-2 rounded-lg shadow-lg;
+  @apply bg-white dark:bg-gray-600;
   @apply cursor-pointer;
 }
 </style>
