@@ -6,12 +6,20 @@
       tag="ul"
       @before-enter="beforeEnter"
       @enter="enter"
-      class="grid grid-cols-2 gap-4 mx-auto max-w-min min-w-max"
+      class="group"
     >
-      <li v-for="option in options" :key="option.name" class="flex flex-col items-center justify-center w-40 h-24 gap-2 bg-white rounded-lg shadow-lg">
-        <div class="w-6 h-6">
-          <img :src="`/images/${option.svg}.svg`">
-        </div>
+      <li v-for="(option, index) in options"
+        :key="option.name"
+        :data-index="index"
+        class="item"
+      >
+        <svg class="w-8 h-8">
+          <!-- It's not easy to load them at runtime -->
+          <use v-if="option.svg === 'at-symbol'" href="@/assets/images/at-symbol.svg#at-symbol"></use>
+          <use v-if="option.svg === 'phone'" href="@/assets/images/phone.svg#phone"></use>
+          <use v-if="option.svg === 'mail'" href="@/assets/images/mail.svg#mail"></use>
+          <use v-if="option.svg === 'fire'" href="@/assets/images/fire.svg#fire"></use>
+        </svg>
         <p class="font-semibold">{{option.text}}</p>
       </li>
     </transition-group>
@@ -57,12 +65,14 @@ export default defineComponent({
     }
     const enter = (el: Element, done: Function) => {
       const elh = el as HTMLElement
-      if (elh) {
+      if (elh && elh.dataset.index) {
         gsap.to(elh, {
-          duration: 1,
+          duration: 0.8,
+          delay: parseInt(elh.dataset.index) * 0.2,
           y: 0,
           opacity: 1,
           ease: 'ease.out',
+          onComplete: () => done(),
         })
       }
     }
@@ -77,5 +87,11 @@ export default defineComponent({
 </script>
 
 <style scoped>
-
+.group {
+  @apply grid grid-cols-2 gap-8 mx-auto text-lg max-w-min min-w-max;
+}
+.item {
+  @apply flex flex-col items-center justify-center w-48 h-32 gap-2 bg-white rounded-lg shadow-lg;
+  @apply cursor-pointer;
+}
 </style>

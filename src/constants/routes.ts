@@ -1,9 +1,9 @@
 const routeNames = {
-  HOME: 'HOME',
+  HOME: 'Home',
   TODOS: {
-    HOME: 'HOME',
-    ABOUT: 'ABOUT',
-    CONTACT: 'CONTACT',
+    HOME: 'Home',
+    ABOUT: 'About',
+    CONTACT: 'Contact',
   },
 }
 

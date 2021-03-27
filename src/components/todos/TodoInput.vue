@@ -8,7 +8,7 @@
          :class="{ 'rotated': onTop }"
          @click="onTop = !onTop">
       <svg class="w-6 h-6 text-gray-600 transition-colors cursor-pointer dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
-        <use href="/images/download.svg#download" />
+        <use href="@/assets/images/download.svg#download" />
       </svg>
     </div>
   </div>

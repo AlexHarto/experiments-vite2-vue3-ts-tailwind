@@ -5,7 +5,7 @@
       <span class="item" @click="todo.removeTodo(todoItem.id)" @mouseenter="isOver = true" @mouseleave="isOver = false">
         <span class="w-full text-center select-none">{{ todoItem.item }}</span>
         <svg class="absolute w-5 h-5 right-2">
-          <use href="/images/trash.svg#trash" />
+          <use href="@/assets/images/trash.svg#trash" />
         </svg>
       </span>
     </li>
